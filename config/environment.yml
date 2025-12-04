@@ -1,23 +1,30 @@
 name: py3_env13
 channels:
-  - conda-forge
   - numba
+  - conda-forge
   - defaults
 dependencies:
+  - accessible-pygments=0.0.5=pyhd8ed1ab_1
+  - alabaster=1.0.0=py313haa95532_0
   - asttokens=3.0.0=py313haa95532_0
+  - babel=2.17.0=py313haa95532_0
+  - beautifulsoup4=4.14.3=pyha770c72_0
   - blas=1.0=mkl
   - blosc=1.21.3=h6c2663c_0
   - bottleneck=1.4.2=py313h2cb717b_0
   - brotli-python=1.0.9=py313h5da7b33_9
   - bzip2=1.0.8=h2bbff1b_6
   - c-blosc2=2.17.1=h0eb4811_0
-  - ca-certificates=2025.9.9=haa95532_0
+  - ca-certificates=2025.12.2=haa95532_0
+  - certifi=2025.11.12=py313haa95532_0
+  - charset-normalizer=3.4.4=py313haa95532_0
   - colorama=0.4.6=py313haa95532_0
   - comm=0.2.1=py313haa95532_0
   - contourpy=1.3.1=py313h214f63a_0
   - cycler=0.11.0=pyhd3eb1b0_0
   - debugpy=1.8.11=py313h5da7b33_0
   - decorator=5.1.1=pyhd3eb1b0_0
+  - docutils=0.21.2=py313haa95532_1
   - executing=0.8.3=pyhd3eb1b0_0
   - expat=2.6.4=h8ddb27b_0
   - fonttools=4.55.3=py313h827c3e9_0
@@ -25,11 +32,14 @@ dependencies:
   - hdf5=1.14.5=ha36df97_2
   - icc_rt=2022.1.0=h6049295_2
   - icu=73.1=h6c2663c_0
+  - idna=3.11=py313haa95532_0
+  - imagesize=1.4.1=py313haa95532_0
   - intel-openmp=2023.1.0=h59b6b97_46320
   - ipykernel=6.29.5=py313haa95532_1
   - ipython=9.1.0=py313haa95532_0
   - ipython_pygments_lexers=1.1.1=py313haa95532_0
   - jedi=0.19.2=py313haa95532_0
+  - jinja2=3.1.6=py313haa95532_0
   - joblib=1.4.2=py313haa95532_0
   - jpeg=9e=h827c3e9_3
   - jupyter_client=8.6.3=py313haa95532_0
@@ -52,6 +62,7 @@ dependencies:
   - llvmlite=0.44.0=py313h8b1c7eb_1
   - lz4-c=1.9.4=h2bbff1b_1
   - lzo=2.10=he774522_2
+  - markupsafe=3.0.2=py313h827c3e9_0
   - matplotlib=3.10.0=py313haa95532_0
   - matplotlib-base=3.10.0=py313h7aa5d4e_0
   - matplotlib-inline=0.1.6=py313haa95532_0
@@ -64,6 +75,7 @@ dependencies:
   - numexpr=2.10.1=py313h4cd664f_0
   - numpy=2.2.2=py313he6dc315_0
   - numpy-base=2.2.2=py313h6011491_0
+  - numpydoc=1.9.0=py313haa95532_0
   - openjpeg=2.5.2=hae555c5_0
   - openssl=3.0.16=h3f729d1_0
   - packaging=24.2=py313haa95532_0
@@ -78,10 +90,12 @@ dependencies:
   - psutil=5.9.0=py313h827c3e9_1
   - pure_eval=0.2.2=pyhd3eb1b0_0
   - py-cpuinfo=9.0.0=py313haa95532_0
+  - pydata-sphinx-theme=0.16.1=pyhd8ed1ab_0
   - pygments=2.19.1=py313haa95532_0
   - pyparsing=3.2.0=py313haa95532_0
   - pyqt=5.15.10=py313h5da7b33_1
   - pyqt5-sip=12.13.0=py313h827c3e9_1
+  - pysocks=1.7.1=py313haa95532_1
   - pytables=3.10.2=py313h0217527_2
   - python=3.13.2=hadb2040_100_cp313
   - python-dateutil=2.9.0post0=py313haa95532_2
@@ -91,11 +105,22 @@ dependencies:
   - pywin32=308=py313h5da7b33_0
   - pyzmq=26.2.0=py313h5da7b33_0
   - qt-main=5.15.2=h19c9488_12
+  - requests=2.32.5=py313haa95532_1
+  - roman-numerals-py=3.1.0=py313haa95532_0
   - scikit-learn=1.6.1=py313h585ebfc_0
   - scipy=1.15.1=py313hd4070db_0
   - setuptools=72.1.0=py313haa95532_0
   - sip=6.7.12=py313h5da7b33_1
   - six=1.16.0=pyhd3eb1b0_1
+  - snowballstemmer=3.0.1=py313haa95532_0
+  - soupsieve=2.8=pyhd8ed1ab_0
+  - sphinx=8.2.3=py313h827c3e9_0
+  - sphinxcontrib-applehelp=2.0.0=pyhd3eb1b0_1
+  - sphinxcontrib-devhelp=2.0.0=pyhd3eb1b0_0
+  - sphinxcontrib-htmlhelp=2.1.0=pyhd3eb1b0_0
+  - sphinxcontrib-jsmath=1.0.1=pyhd3eb1b0_0
+  - sphinxcontrib-qthelp=2.0.0=pyhd3eb1b0_1
+  - sphinxcontrib-serializinghtml=2.0.0=pyhd3eb1b0_0
   - sqlite=3.45.3=h2bbff1b_0
   - stack_data=0.2.0=pyhd3eb1b0_0
   - tbb=2021.8.0=h59b6b97_0
@@ -107,10 +132,12 @@ dependencies:
   - typing-extensions=4.15.0=py313haa95532_0
   - typing_extensions=4.15.0=py313haa95532_0
   - tzdata=2025a=h04d1e81_0
+  - urllib3=2.3.0=py313haa95532_0
   - vc=14.42=haa95532_4
   - vs2015_runtime=14.42.34433=he0abc0d_4
   - wcwidth=0.2.5=pyhd3eb1b0_0
   - wheel=0.44.0=py313haa95532_0
+  - win_inet_pton=1.1.0=py313haa95532_1
   - xz=5.4.6=h8cc25b3_1
   - zeromq=4.3.5=hd77b12b_0
   - zlib=1.2.13=h8cc25b3_1
@@ -120,4 +147,3 @@ dependencies:
       - dill==0.3.9
       - openturns==1.24
       - pyhdf==0.11.6
-prefix: C:\Users\elion\anaconda3\envs\py3_env13

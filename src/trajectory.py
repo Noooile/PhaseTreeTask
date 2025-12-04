@@ -12,6 +12,8 @@ class Trajectory:
         Path to the `.xyz` file containing the trajectory data.
     verbose : bool, default=False
 
+    Notes
+    -----
     .. important::
         Most instance attributes are **protected** (names with a single leading underscore).
         Those should not be modified outside of class methods.
