@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Examples &#8212; PhaseTreeTask 1.0.0 documentation</title>
+    <title>FastRDF &#8212; PhaseTreeTask 1.0.0 documentation</title>
   
   
   
@@ -42,10 +42,11 @@
     <script src="_static/documentation_options.js?v=8d563738"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'examples';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fastrdf';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="FastRDF" href="fastrdf.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="FastMSD" href="fastmsd.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -145,15 +146,15 @@
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="fastrdf.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
     FastRDF
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
     Examples
   </a>
 </li>
@@ -252,15 +253,15 @@
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="fastrdf.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
     FastRDF
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
     Examples
   </a>
 </li>
@@ -331,7 +332,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Examples</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">FastRDF</span></li>
   </ul>
 </nav>
 </div>
@@ -348,8 +349,37 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
+  <section id="fastrdf">
+<h1>FastRDF<a class="headerlink" href="#fastrdf" title="Link to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="fastrdf.radial_distribution_function">
+<span class="sig-prename descclassname"><span class="pre">fastrdf.</span></span><span class="sig-name descname"><span class="pre">radial_distribution_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r_cut</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fastrdf.radial_distribution_function" title="Link to this definition">#</a></dt>
+<dd><p>Compute the <strong>Radial Distribution Function</strong> of a trajectory averaged over time.</p>
+<p>The <strong>RDF</strong> is time-averaged and ensemble-averaged: the computation uses the whole trajectory as well as all available atoms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>r_cut</strong><span class="classifier">float</span></dt><dd><p>Outer cutoff distance.</p>
+</dd>
+<dt><strong>n_bins</strong><span class="classifier">int</span></dt><dd><p>Number of bins used to evenly split the distance interval.</p>
+</dd>
+<dt><strong>box_size: ndarray</strong></dt><dd><p>1D array containing the dimensions of the simulation box, assumed to always be cubic.</p>
+</dd>
+<dt><strong>coordinates</strong><span class="classifier">ndarray</span></dt><dd><p>3D array of the <cite>(x, y, z)</cite> coordinates of each atom in each frame.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>distribution</strong><span class="classifier">ndarray</span></dt><dd><p>1D array of the time and ensemble averaged <strong>RDF</strong>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function is compiled “just-in-time” using <cite>numba</cite>.</p>
+</dd></dl>
+
 </section>
 
 
@@ -363,13 +393,22 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="fastrdf.html"
+       href="fastmsd.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">FastRDF</p>
+        <p class="prev-next-title">FastMSD</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="examples.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -383,10 +422,22 @@
 
 
   <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fastrdf.radial_distribution_function"><code class="docutils literal notranslate"><span class="pre">radial_distribution_function()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/examples.rst.txt"
+      <li><a href="_sources/fastrdf.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>

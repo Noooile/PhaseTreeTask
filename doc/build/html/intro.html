@@ -140,6 +140,20 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="fastmsd.html">
+    FastMSD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="fastrdf.html">
+    FastRDF
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="examples.html">
     Examples
   </a>
@@ -228,6 +242,20 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="trajectory.html">
     Trajectory
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="fastmsd.html">
+    FastMSD
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="fastrdf.html">
+    FastRDF
   </a>
 </li>
 
@@ -330,7 +358,22 @@ For a detailed rundown on how to use the code, please look at the <a class="refe
 </section>
 <section id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">#</a></h2>
-<p>The project consists of</p>
+<p>The codebase consists of three modules:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="trajectory.html"><span class="doc">Trajectory</span></a>: contains the <code class="docutils literal notranslate"><span class="pre">Trajectory</span></code> class which may be instantiated with a single <cite>.xyz</cite> file path.</p></li>
+<li><p><a class="reference internal" href="fastmsd.html"><span class="doc">FastMSD</span></a>: contains a function to compute the <strong>Mean Squared Displacement</strong> of a trajectory.</p></li>
+<li><p><a class="reference internal" href="fastrdf.html"><span class="doc">FastRDF</span></a>: contains a function to compute the <strong>Radial Distribution Function</strong> of a trajectory.</p></li>
+</ul>
+</section>
+<section id="numba-compiler">
+<h2>Numba compiler<a class="headerlink" href="#numba-compiler" title="Link to this heading">#</a></h2>
+<p><cite>numba</cite> is a library that compiles python code <em>just-in-time</em>, and makes use of parallelization.
+The first time you run a function that uses <cite>numba</cite>, it is compiled once and stored in cache for as long as you keep your python kernel running.
+<cite>numba</cite> does not require any preconfiguration, meaning you can use it right away without having to specify any parameters (like the number of cpu…).</p>
+<p>While the use of <em>just-in-time</em> compilation allows the code to run much faster, it can also be less memory-intensive than <cite>Numpy</cite>.
+When dealing with very heavy simulations, storing and dealing with all the coordinates in a single <cite>Numpy</cite> array can overload the RAM.
+Although this task doesn’t require a lot of memory considering the given MD trajectory, I think the use of <cite>numba</cite> is still very good.</p>
+<p>The functions inside the modules <a class="reference internal" href="fastmsd.html"><span class="doc">FastMSD</span></a> and <a class="reference internal" href="fastrdf.html"><span class="doc">FastRDF</span></a> use <cite>numba</cite>.</p>
 </section>
 <section id="requirements-and-versions">
 <h2>Requirements and versions<a class="headerlink" href="#requirements-and-versions" title="Link to this heading">#</a></h2>
@@ -393,6 +436,7 @@ For a detailed rundown on how to use the code, please look at the <a class="refe
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numba-compiler">Numba compiler</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-versions">Requirements and versions</a></li>
 </ul>
   </nav></div>

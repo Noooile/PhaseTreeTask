@@ -12,6 +12,8 @@ PhaseTreeTask documentation
 
    intro
    trajectory
+   fastmsd
+   fastrdf
    examples
 
 Indices and tables

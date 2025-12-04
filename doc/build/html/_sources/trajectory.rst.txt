@@ -15,4 +15,3 @@ General
 		:toctree: generated/
 		
 		trajectory.Trajectory.read_xyz
-	

@@ -4,12 +4,13 @@ This codebase aims to fulfill the assignment I was given as part of my applicati
 
 ## Assumptions
 
+- Coordinates in 3 dimensions
 - Constant simulation box dimensions throughout a simulation
 - Constant number of atoms throughout a simulation
 - `.xyz` files don't include atom forces or magnetic moments
 - Cubic boxes, because the box dimensions for the simulations are not given as vectors
 - **Mean Squared Displacement**:
-  - assumed a constant time step between the configurations
+  - assumed a constant time step between the frames
   - computes a time **and** ensemble averaged MSD
 - **Radial Distribution Function**:
   - cutoff distance shouldn't exceed half of the smallest side of the box
