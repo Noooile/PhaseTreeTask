@@ -12,7 +12,6 @@ This codebase aims to fulfill the assignment I was given as part of my applicati
   - assumed a constant time step between the configurations
   - computes a time **and** ensemble averaged MSD
 - **Radial Distribution Function**:
-  - used a buffer distance to prevent excessive computations of the neighbors lists
   - cutoff distance shouldn't exceed half of the smallest side of the box
 
 ## Content
@@ -22,3 +21,5 @@ The Python code can be found under the `src` folder. The `res` folder contains t
 ## References
 
 [MSD formula](https://www.neutron-sciences.org/articles/sfn/pdf/2011/01/sfn201112010.pdf)
+
+[RDF formula](https://people.bath.ac.uk/chsscp/teach/md.bho/Theory/rdf.html)
