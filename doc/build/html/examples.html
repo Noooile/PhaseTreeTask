@@ -350,6 +350,55 @@
                   
   <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
+<p>This section provides a step-by-step tutorial on how to use this code.
+We will go through the main features of the code, for more details please refer to the documentation.</p>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<p>Let’s first import the only module we need.
+Notice we don’t need <a class="reference internal" href="fastmsd.html"><span class="doc">FastMSD</span></a> or <a class="reference internal" href="fastrdf.html"><span class="doc">FastRDF</span></a> since the class <a class="reference internal" href="trajectory.html#trajectory.Trajectory" title="trajectory.Trajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">trajectory.Trajectory</span></code></a> will be using these modules in our stead.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">trajectory</span><span class="w"> </span><span class="kn">import</span> <span class="n">Trajectory</span>
+</pre></div>
+</div>
+</section>
+<section id="loading-the-trajectory">
+<h2>Loading the trajectory<a class="headerlink" href="#loading-the-trajectory" title="Link to this heading">#</a></h2>
+<p>Let’s now load a trajectory, providing we have one at hand. Here, we’ll use the one given for the assignment.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">traj</span> <span class="o">=</span> <span class="n">Trajectory</span><span class="p">(</span><span class="s2">&quot;../res/tristan_md_trajectory_N125_F500_L10.0.xyz&quot;</span><span class="p">)</span>
+<span class="n">traj</span>
+</pre></div>
+</div>
+<p>The last line of the code above prints information regarding the trajectory like the number of atoms and the number of frames.</p>
+</section>
+<section id="mean-squared-displacement">
+<h2>Mean Squared Displacement<a class="headerlink" href="#mean-squared-displacement" title="Link to this heading">#</a></h2>
+<p>Let’s compute the <strong>MSD</strong> for the trajectory:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">msd</span> <span class="o">=</span> <span class="n">traj</span><span class="o">.</span><span class="n">mean_squared_displacement</span><span class="p">()</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="_images/msd.png" src="_images/msd.png" />
+</figure>
+</section>
+<section id="radial-distribution-function">
+<h2>Radial Distribution Function<a class="headerlink" href="#radial-distribution-function" title="Link to this heading">#</a></h2>
+<p>Let’s compute the <strong>RDF</strong> of the trajectory:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rdf</span> <span class="o">=</span> <span class="n">traj</span><span class="o">.</span><span class="n">radial_distribution_function</span><span class="p">()</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="_images/rdf.png" src="_images/rdf.png" />
+</figure>
+</section>
+<section id="animation">
+<h2>Animation<a class="headerlink" href="#animation" title="Link to this heading">#</a></h2>
+<p>Finally, let us animate the trajectories of the particles, projected on the xy-plane:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">anim</span> <span class="o">=</span> <span class="n">traj</span><span class="o">.</span><span class="n">animate</span><span class="p">()</span>
+<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;../res/trajectory.gif&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="s1">&#39;pillow&#39;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The last line of the code above allows to save the file as a gif.</p>
+<img alt="_images/trajectory.gif" src="_images/trajectory.gif" />
+</section>
 </section>
 
 
@@ -381,6 +430,22 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-trajectory">Loading the trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-displacement">Mean Squared Displacement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radial-distribution-function">Radial Distribution Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animation">Animation</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
