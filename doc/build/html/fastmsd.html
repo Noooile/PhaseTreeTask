@@ -353,14 +353,12 @@
 <h1>FastMSD<a class="headerlink" href="#fastmsd" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="fastmsd.mean_squared_displacement">
-<span class="sig-prename descclassname"><span class="pre">fastmsd.</span></span><span class="sig-name descname"><span class="pre">mean_squared_displacement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fastmsd.mean_squared_displacement" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">fastmsd.</span></span><span class="sig-name descname"><span class="pre">mean_squared_displacement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fastmsd.mean_squared_displacement" title="Link to this definition">#</a></dt>
 <dd><p>Compute the <strong>Mean Squared Displacement</strong> of a trajectory over all possible time interval.</p>
 <p>The <strong>MSD</strong> is time-averaged and ensemble-averaged: the computation uses the whole trajectory as well as all available atoms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timestamps</strong><span class="classifier">ndarray</span></dt><dd><p>1D array of the timestamps of the simulation.</p>
-</dd>
 <dt><strong>coordinates</strong><span class="classifier">ndarray</span></dt><dd><p>3D array of the <cite>(x, y, z)</cite> coordinates of each atom in each frame.</p>
 </dd>
 </dl>
