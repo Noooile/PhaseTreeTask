@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>trajectory.Trajectory.read_xyz &#8212; PhaseTreeTask 1.0.0 documentation</title>
+    <title>trajectory.Trajectory.radial_distribution_function &#8212; PhaseTreeTask 1.0.0 documentation</title>
   
   
   
@@ -42,11 +42,11 @@
     <script src="../_static/documentation_options.js?v=8d563738"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/trajectory.Trajectory.read_xyz';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/trajectory.Trajectory.radial_distribution_function';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="trajectory.Trajectory.animate" href="trajectory.Trajectory.animate.html" />
-    <link rel="prev" title="Trajectory" href="../trajectory.html" />
+    <link rel="next" title="FastMSD" href="../fastmsd.html" />
+    <link rel="prev" title="trajectory.Trajectory.mean_squared_displacement" href="trajectory.Trajectory.mean_squared_displacement.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -294,10 +294,10 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">trajectory.Trajectory.read_xyz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trajectory.Trajectory.read_xyz.html">trajectory.Trajectory.read_xyz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trajectory.Trajectory.animate.html">trajectory.Trajectory.animate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trajectory.Trajectory.mean_squared_displacement.html">trajectory.Trajectory.mean_squared_displacement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trajectory.Trajectory.radial_distribution_function.html">trajectory.Trajectory.radial_distribution_function</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">trajectory.Trajectory.radial_distribution_function</a></li>
 </ul>
 </div>
 </nav></div>
@@ -341,7 +341,7 @@
     
     <li class="breadcrumb-item"><a href="../trajectory.html" class="nav-link">Trajectory</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">trajectory.Trajectory.read_xyz</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">trajectory.Trajectory.radial_distribution_function</span></li>
   </ul>
 </nav>
 </div>
@@ -358,36 +358,37 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="trajectory-trajectory-read-xyz">
-<h1>trajectory.Trajectory.read_xyz<a class="headerlink" href="#trajectory-trajectory-read-xyz" title="Link to this heading">#</a></h1>
+  <section id="trajectory-trajectory-radial-distribution-function">
+<h1>trajectory.Trajectory.radial_distribution_function<a class="headerlink" href="#trajectory-trajectory-radial-distribution-function" title="Link to this heading">#</a></h1>
 <dl class="py method">
-<dt class="sig sig-object py" id="trajectory.Trajectory.read_xyz">
-<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Trajectory.</span></span><span class="sig-name descname"><span class="pre">read_xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#trajectory.Trajectory.read_xyz" title="Link to this definition">#</a></dt>
-<dd><p>Read the <cite>.xyz</cite> file at a given path.</p>
+<dt class="sig sig-object py" id="trajectory.Trajectory.radial_distribution_function">
+<span class="sig-prename descclassname"><span class="pre">Trajectory.</span></span><span class="sig-name descname"><span class="pre">radial_distribution_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">return_plt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#trajectory.Trajectory.radial_distribution_function" title="Link to this definition">#</a></dt>
+<dd><p>Compute the <strong>Radial Distribution Function</strong> of the trajectory, and plot the result.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>path</strong><span class="classifier">str</span></dt><dd><p>Path of the file.</p>
+<dt><strong>return_plt</strong><span class="classifier">bool, default=False</span></dt><dd><p>If <cite>True</cite>, returns the figure and axis objects.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>n_frames</strong><span class="classifier">int</span></dt><dd><p>Number of frames.</p>
+<dt><strong>rdf</strong><span class="classifier">ndarray</span></dt><dd><p>1D array of the time and ensemble averaged <strong>RDF</strong>.</p>
 </dd>
-<dt><strong>n_atoms</strong><span class="classifier">int</span></dt><dd><p>Number of atoms per frame, assumed to be constant throughout the simulation.</p>
+<dt>matplotlib figure</dt><dd><p>Returned if <cite>return_plt</cite> is set to <cite>True</cite>.</p>
 </dd>
-<dt><strong>box_size</strong><span class="classifier">ndarray</span></dt><dd><p>1D array containing the dimensions of the simulation box, assumed to always be cubic.</p>
-</dd>
-<dt><strong>timestamps</strong><span class="classifier">ndarray</span></dt><dd><p>1D array of the timestamps.</p>
-</dd>
-<dt><strong>coordinates</strong><span class="classifier">ndarray</span></dt><dd><p>3D array of the <cite>(x, y, z)</cite> coordinates of each atom in each frame.</p>
-</dd>
-<dt><strong>elements</strong><span class="classifier">ndarray</span></dt><dd><p>1D array of the type of each atom.</p>
+<dt>matplotlib axis</dt><dd><p>Returned if <cite>return_plt</cite> is set to <cite>True</cite>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../fastrdf.html#fastrdf.radial_distribution_function" title="fastrdf.radial_distribution_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastrdf.radial_distribution_function</span></code></a></dt><dd><p>is used to compute the <strong>RDF</strong>.</p>
+</dd>
+</dl>
+</div>
 </dd></dl>
 
 </section>
@@ -403,20 +404,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../trajectory.html"
+       href="trajectory.Trajectory.mean_squared_displacement.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Trajectory</p>
+        <p class="prev-next-title">trajectory.Trajectory.mean_squared_displacement</p>
       </div>
     </a>
     <a class="right-next"
-       href="trajectory.Trajectory.animate.html"
+       href="../fastmsd.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">trajectory.Trajectory.animate</p>
+        <p class="prev-next-title">FastMSD</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -439,7 +440,7 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trajectory.Trajectory.read_xyz"><code class="docutils literal notranslate"><span class="pre">Trajectory.read_xyz()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trajectory.Trajectory.radial_distribution_function"><code class="docutils literal notranslate"><span class="pre">Trajectory.radial_distribution_function()</span></code></a></li>
 </ul>
   </nav></div>
 
@@ -447,7 +448,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/generated/trajectory.Trajectory.read_xyz.rst.txt"
+      <li><a href="../_sources/generated/trajectory.Trajectory.radial_distribution_function.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>

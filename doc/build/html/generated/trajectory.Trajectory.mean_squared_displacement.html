@@ -45,8 +45,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'generated/trajectory.Trajectory.mean_squared_displacement';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="FastMSD" href="../fastmsd.html" />
-    <link rel="prev" title="trajectory.Trajectory.read_xyz" href="trajectory.Trajectory.read_xyz.html" />
+    <link rel="next" title="trajectory.Trajectory.radial_distribution_function" href="trajectory.Trajectory.radial_distribution_function.html" />
+    <link rel="prev" title="trajectory.Trajectory.animate" href="trajectory.Trajectory.animate.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -295,7 +295,9 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="trajectory.Trajectory.read_xyz.html">trajectory.Trajectory.read_xyz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trajectory.Trajectory.animate.html">trajectory.Trajectory.animate</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">trajectory.Trajectory.mean_squared_displacement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trajectory.Trajectory.radial_distribution_function.html">trajectory.Trajectory.radial_distribution_function</a></li>
 </ul>
 </div>
 </nav></div>
@@ -360,12 +362,12 @@
 <h1>trajectory.Trajectory.mean_squared_displacement<a class="headerlink" href="#trajectory-trajectory-mean-squared-displacement" title="Link to this heading">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="trajectory.Trajectory.mean_squared_displacement">
-<span class="sig-prename descclassname"><span class="pre">Trajectory.</span></span><span class="sig-name descname"><span class="pre">mean_squared_displacement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">return_fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#trajectory.Trajectory.mean_squared_displacement" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Trajectory.</span></span><span class="sig-name descname"><span class="pre">mean_squared_displacement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">return_plt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#trajectory.Trajectory.mean_squared_displacement" title="Link to this definition">#</a></dt>
 <dd><p>Compute the <strong>Mean Squared Displacement</strong> of the trajectory over all possible time intervals, and plot the result.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>return_fig</strong><span class="classifier">bool, default=False</span></dt><dd><p>If <cite>True</cite>, returns the figure and axis object.</p>
+<dt><strong>return_plt</strong><span class="classifier">bool, default=False</span></dt><dd><p>If <cite>True</cite>, returns the figure and axis objects.</p>
 </dd>
 </dl>
 </dd>
@@ -373,13 +375,20 @@
 <dd class="field-even"><dl class="simple">
 <dt><strong>msd</strong><span class="classifier">ndarray</span></dt><dd><p>1D array of the time and ensemble averaged <strong>Mean Squared Displacement</strong> for all possible time intervals.</p>
 </dd>
-<dt>matplotlib figure</dt><dd><p>Returned if <cite>return_fig</cite> is set to <cite>True</cite>.</p>
+<dt>matplotlib figure</dt><dd><p>Returned if <cite>return_plt</cite> is set to <cite>True</cite>.</p>
 </dd>
-<dt>matplotlib axis</dt><dd><p>Returned if <cite>return_fig</cite> is set to <cite>True</cite>.</p>
-</dd>
-</dl>
+<dt>matplotlib axis</dt><dd><p>Returned if <cite>return_plt</cite> is set to <cite>True</cite>.</p>
 </dd>
 </dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../fastmsd.html#fastmsd.mean_squared_displacement" title="fastmsd.mean_squared_displacement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastmsd.mean_squared_displacement</span></code></a></dt><dd><p>is used to compute the <strong>MSD</strong>.</p>
+</dd>
+</dl>
+</div>
 </dd></dl>
 
 </section>
@@ -395,20 +404,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="trajectory.Trajectory.read_xyz.html"
+       href="trajectory.Trajectory.animate.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">trajectory.Trajectory.read_xyz</p>
+        <p class="prev-next-title">trajectory.Trajectory.animate</p>
       </div>
     </a>
     <a class="right-next"
-       href="../fastmsd.html"
+       href="trajectory.Trajectory.radial_distribution_function.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">FastMSD</p>
+        <p class="prev-next-title">trajectory.Trajectory.radial_distribution_function</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

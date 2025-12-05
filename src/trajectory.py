@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 
 from fastmsd import mean_squared_displacement as fast_msd
 from fastrdf import radial_distribution_function as fast_rdf
@@ -95,6 +96,56 @@ class Trajectory:
         return n_frames, n_atoms, box_size, timestamps, coordinates, elements
     
 
+    def animate(self, wrap=True):
+        """Animate the trajectories of the particles projected on the xy-plane.
+        
+        Parameters
+        ----------
+        wrap : bool, default=True
+            If set to `True`, apply periodic boundary conditions to wrap the particles.
+
+        Returns
+        -------
+        matplotlib funcanimation
+        """
+
+        fig, ax = plt.subplots(figsize=(8, 8))
+
+        ax.set_xlim(0, self._box_size[0])
+        ax.set_ylim(0, self._box_size[1])
+        ax.set_aspect('equal')
+
+        ax.set_xlabel(r'$x$ coordinate [Å]')
+        ax.set_ylabel(r'$y$ coordinate [Å]')
+        fig.suptitle(r'Animation of the particle trajectories (on the $x,\,y$ plane)')
+
+        if wrap:
+            coordinates = self._coordinates % self._box_size
+        else:
+            coordinates = self._coordinates.copy()
+
+        particles = ax.scatter(
+            coordinates[0, :, 0],
+            coordinates[0, :, 1],
+            s=20, c='tab:blue', alpha=.6
+        )
+
+        def update(frame:int):
+
+            new_coordinates = coordinates[frame, :, :2]
+            particles.set_offsets(new_coordinates)
+
+            return particles,
+        
+        animation = FuncAnimation(
+            fig, update, frames=coordinates.shape[0],
+            interval=20, blit=True
+        )
+
+        plt.close()
+        return animation
+
+
     def mean_squared_displacement(self, return_plt=False):
         """Compute the **Mean Squared Displacement** of the trajectory over all possible time intervals, and plot the result.
 
@@ -159,7 +210,7 @@ class Trajectory:
 
         See also
         --------
-        fastrdf.radial_distribution_function : is used to compute the **MSD**.
+        fastrdf.radial_distribution_function : is used to compute the **RDF**.
         """
 
         rdf = fast_rdf(self._r_cut, self._n_bins, self._box_size, self._coordinates)
