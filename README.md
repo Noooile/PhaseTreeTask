@@ -10,7 +10,7 @@ To use this code, you simply need to import the following:
 from trajectory import Trajectory
 ```
 
-For further explanations and examples, please refer to the **documentation**.
+For further explanations and examples, please refer to the [**documentation**](https://phasetreetask.readthedocs.io/en/latest/).
 
 ## Content
 
